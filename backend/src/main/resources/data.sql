@@ -30,3 +30,12 @@ INSERT INTO tb_section (title, description, position, img_uri, resource_id, prer
 
 INSERT INTO tb_enrollment (enroll_moment, refund_moment, available, only_update, user_id, offer_id) VALUES ('2021-05-06', null, true, false, 1, 1);
 INSERT INTO tb_enrollment (enroll_moment, refund_moment, available, only_update, user_id, offer_id) VALUES ('2021-05-06', null, true, false, 2, 1);
+
+INSERT INTO tb_lesson (title, position, section_id) VALUES ('Aula 1 do cap 1', 1, 1);
+INSERT INTO tb_content (text_content, video_uri, id) VALUES ('Material de apoio: 123', 'https://youtube.com/12345', 1); 
+
+INSERT INTO tb_lesson (title, position, section_id) VALUES ('Tarefa cap 1', 2, 1);
+INSERT INTO tb_task (id, description, question_count, approval_count, weight, due_date) VALUES (2, 'Enviar hoje', 5, 4, 1.0, '2021-06-11'); 
+
+INSERT INTO tb_lessons_done (lesson_id, user_id, offer_id) VALUES (1,1,1);
+INSERT INTO tb_lessons_done (lesson_id, user_id, offer_id) VALUES (2,1,1);
