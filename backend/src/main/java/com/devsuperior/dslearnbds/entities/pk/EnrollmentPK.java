@@ -10,24 +10,26 @@ import com.devsuperior.dslearnbds.entities.Offer;
 import com.devsuperior.dslearnbds.entities.User;
 
 @Embeddable
-public class EnrollmentPK implements Serializable{
+public class EnrollmentPK implements Serializable {
 	private static final long serialVersionUID = 1L;
-	
+
 	@ManyToOne
 	@JoinColumn(name = "user_id")
 	private User user;
+
 	@ManyToOne
 	@JoinColumn(name = "offer_id")
 	private Offer offer;
 	
-	public EnrollmentPK() {}
+	public EnrollmentPK() {
+	}
 
 	public EnrollmentPK(User user, Offer offer) {
+		super();
 		this.user = user;
 		this.offer = offer;
 	}
 
-	
 	public User getUser() {
 		return user;
 	}
@@ -73,6 +75,5 @@ public class EnrollmentPK implements Serializable{
 		} else if (!user.equals(other.user))
 			return false;
 		return true;
-	};
-
+	}
 }

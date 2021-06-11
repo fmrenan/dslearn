@@ -17,7 +17,7 @@ import com.devsuperior.dslearnbds.entities.enums.ResourceType;
 
 @Entity
 @Table(name = "tb_resource")
-public class Resource implements Serializable{
+public class Resource implements Serializable {
 	private static final long serialVersionUID = 1L;
 	
 	@Id
@@ -32,14 +32,16 @@ public class Resource implements Serializable{
 	@ManyToOne
 	@JoinColumn(name = "offer_id")
 	private Offer offer;
-	
+
 	@OneToMany(mappedBy = "resource")
 	private List<Section> sections = new ArrayList<>();
 	
-	public Resource() {}
+	public Resource() {
+	}
 
 	public Resource(Long id, String title, String description, Integer position, String imgUri, ResourceType type,
 			Offer offer) {
+		super();
 		this.id = id;
 		this.title = title;
 		this.description = description;
@@ -49,7 +51,6 @@ public class Resource implements Serializable{
 		this.offer = offer;
 	}
 
-	
 	public Long getId() {
 		return id;
 	}
@@ -105,10 +106,6 @@ public class Resource implements Serializable{
 	public void setOffer(Offer offer) {
 		this.offer = offer;
 	}
-	
-	public List<Section> getSections() {
-		return sections;
-	}
 
 	@Override
 	public int hashCode() {
@@ -133,6 +130,5 @@ public class Resource implements Serializable{
 		} else if (!id.equals(other.id))
 			return false;
 		return true;
-	};
-	
+	}
 }
